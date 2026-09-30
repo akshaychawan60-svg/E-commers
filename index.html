@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Mini Amazon</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <header>
+
+        <h1>🛒 Mini Amazon</h1>
+
+        <p>Your simple online shopping website</p>
+
+        <button onclick="showCart()">
+            🛒 Cart (<span id="cartCount">0</span>)
+        </button>
+
+    </header>
+
+
+    <!-- Search and filter -->
+
+    <div class="search-area">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search products..."
+            onkeyup="displayProducts()"
+        >
+
+
+        <select
+            id="categorySelect"
+            onchange="displayProducts()"
+        >
+
+            <option value="all">
+                All Categories
+            </option>
+
+            <option value="electronics">
+                Electronics
+            </option>
+
+            <option value="jewelery">
+                Jewellery
+            </option>
+
+            <option value="men's clothing">
+                Men's Clothing
+            </option>
+
+            <option value="women's clothing">
+                Women's Clothing
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <!-- Products -->
+
+    <main>
+
+        <div id="productContainer" class="product-container">
+
+            <p>Loading products...</p>
+
+        </div>
+
+    </main>
+
+
+    <!-- Product details popup -->
+
+    <div id="productPopup" class="popup">
+
+        <div class="popup-content">
+
+            <button
+                class="close-button"
+                onclick="closeProduct()">
+                ×
+            </button>
+
+
+            <img id="popupImage">
+
+
+            <h2 id="popupTitle"></h2>
+
+            <p id="popupDescription"></p>
+
+            <h3 id="popupPrice"></h3>
+
+            <button
+                class="add-button"
+                id="popupAddButton">
+                Add to Cart
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- Cart popup -->
+
+    <div id="cartPopup" class="popup">
+
+        <div class="cart-content">
+
+            <button
+                class="close-button"
+                onclick="closeCart()">
+                ×
+            </button>
+
+
+            <h2>🛒 Your Cart</h2>
+
+
+            <div id="cartItems"></div>
+
+
+            <h2>
+                Total:
+                ₹<span id="cartTotal">0</span>
+            </h2>
+
+
+            <button
+                class="checkout-button"
+                onclick="checkout()">
+
+                Checkout
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
